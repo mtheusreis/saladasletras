@@ -1,0 +1,550 @@
+:root {
+
+    --red-col: rgb(255, 68, 68);
+    --black-col: rgb(14, 14, 14);
+    --white-col: rgb(247, 247, 247);
+    --ff-roboto: "Roboto", sans-serif;
+    --ff-logo: "Lobster", sans-serif;
+    --green-col: #7fda7f;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--ff-roboto);
+    height: 100vh;
+}
+
+.title {
+    font-family: var(--ff-roboto);
+    font-size: 19px;
+}
+
+#title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.subtitle {
+    font-family: var(--ff-roboto);
+    font-size: 19px;
+    border-left: 3px solid var(--red-col);
+    padding: 0 5px;
+    margin: 15px 0;
+}
+
+.logo {
+    font-family: var(--ff-logo);
+    color: var(--black-col);
+
+    .letras {
+        color: var(--red-col);
+        text-decoration: underline;
+    }
+}
+
+.modalLogin {
+    display: none;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+::-webkit-scrollbar {
+  width: 10px;               
+  height: 10px;             
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f0;     
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ff4444; 
+  border-radius: 10px;
+  border: 2px solid #f0f0f0; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #cc0000;
+}
+
+
+.content {
+    width: 100%;
+    min-height: 100%;
+    height: fit-content;
+    background-color: var(--white-col);
+
+    header {
+        width: 100%;
+        height: 10%;
+        position: fixed;
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 5%;
+        padding-left: 20%;
+        align-items: center;
+        z-index: 999;
+    }
+
+    .containerContent {
+        height: fit-content;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5%;
+        margin: 0;
+        padding-left: 20%;
+        margin-top: 30px;
+
+        .contentScreen {
+            width: 100%;
+            height: 100%;
+        }
+
+    }
+
+}
+
+.lateral {
+    width: 15%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    position: fixed;
+    z-index: 9999;
+}
+
+.middleLateral {
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .navBtns {
+        border-radius: 10px;
+        background-color: var(--white-col);
+        padding: 10px 20px;
+        display: flex;
+        gap: 10px;
+        transition: .2s ease-in-out;
+
+        &:hover {
+            background-color: var(--red-col);
+            color: var(--white-col);
+            cursor: pointer;
+            box-shadow: 0 0 6px var(--red-col);
+        }
+    }
+
+}
+
+.button {
+    padding: 7px 15px;
+    border-radius: 10px;
+    border: none;
+    transition: .2s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        &.red {
+            background-color: var(--red-col);
+            color: var(--white-col);
+            box-shadow: 0 0 6px var(--red-col);
+
+        }
+
+        &.black {
+            background-color: var(--black-col);
+            color: var(--white-col);
+            box-shadow: 0 0 6px var(--black-col);
+
+
+        }
+    }
+}
+
+input {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+
+    &:focus {
+        box-shadow: 0 0 6px var(--red-col);
+    }
+}
+
+select {
+    padding: 5px;
+    border: 2px solid var(--red-col);
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+
+    &:focus {
+        box-shadow: 0 0 6px var(--red-col);
+    }
+}
+
+.emprestimosTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--ff-roboto);
+    background-color: var(--white-col);
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.emprestimosTable thead {
+    background-color: var(--black-col);
+    color: var(--white-col);
+}
+
+.emprestimosTable th,
+.emprestimosTable td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.emprestimosTable tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+.status-ok {
+    color: var(--green-col);
+    font-weight: bold;
+}
+
+.status-pendente {
+    color: var(--red-col);
+    font-weight: bold;
+}
+
+.btnDevolver {
+    background-color: var(--red-col);
+    color: var(--white-col);
+    border: none;
+    padding: 6px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btnDevolver:hover {
+    background-color: rgb(200, 40, 40);
+}
+
+.checkIcon {
+    font-size: 18px;
+    text-align: center;
+    color: var(--green-col);
+    font-weight: bold;
+}
+
+#emprestimoForm {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-family: var(--ff-roboto);
+    max-width: 500px;
+    margin: 0 0;
+    margin-bottom: 50px;
+}
+
+#emprestimoForm input[type="text"],
+#emprestimoForm input[type="date"],
+#emprestimoForm input[type="number"] {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+#emprestimoForm input[type="text"]:focus,
+#emprestimoForm input[type="date"]:focus {
+    border-color: var(--red-col);
+}
+
+#emprestimoForm label {
+    font-weight: 500;
+    color: var(--black-col);
+}
+
+#alunosForm {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-family: var(--ff-roboto);
+    max-width: 500px;
+    margin: 0 0 50px 0;
+}
+
+#alunosForm input[type="text"],
+#alunosForm select {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+#alunosForm input[type="text"]:focus,
+#alunosForm select:focus {
+    border-color: var(--red-col);
+}
+
+#livroForm {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-family: var(--ff-roboto);
+    max-width: 500px;
+    margin: 0 0;
+    margin-bottom: 50px;
+}
+
+#livroForm input[type="text"],
+#livroForm input[type="number"] {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+#livroForm input[type="text"]:focus,
+#livroForm input[type="number"]:focus {
+    border-color: var(--red-col);
+}
+
+#livroForm label {
+    font-weight: 500;
+    color: var(--black-col);
+}
+
+
+.button.red {
+    background-color: var(--red-col);
+    color: var(--white-col);
+    font-weight: bold;
+    padding: 10px;
+    font-size: 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.button.red:hover {
+    background-color: rgb(200, 40, 40);
+}
+
+.autocomplete-wrapper {
+    position: relative;
+    width: 100%; 
+    margin-bottom: 20px;
+}
+
+.autocomplete-results {
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    right: 0;
+    background-color: var(--white-col);
+    max-height: 300px;
+    overflow-y: auto;
+    border-radius: 5px;
+    margin-top: 4px;
+    z-index: 10;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.autocomplete-results div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.autocomplete-results div:hover {
+    background-color: #f0f0f0;
+}
+
+.notificacao {
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--red-col);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease, bottom 0.4s ease;
+}
+
+.notificacao.show {
+    opacity: 1;
+    pointer-events: auto;
+    top: 50px;
+}
+
+.notificacao.ok {
+    background-color: #2ecc71;
+}
+
+.notificacao.erro {
+    background-color: #e74c3c;
+}
+
+.hidden {
+    display: none;
+}
+
+.navBtns.active {
+    background-color: var(--red-col);
+    color: var(--white-col);
+    font-weight: bold;
+    border-left: 4px solid var(--black-col);
+    cursor: default;
+}
+
+.navBtns {
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#graficoSalas {
+    width: 100%;
+    height: 400px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 99999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4); 
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.modal-content {
+  background-color: #d9534f; 
+  padding: 25px 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+.modal-content h2 {
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+#senhaInput {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+  margin-bottom: 12px;
+}
+
+#erroSenha {
+  min-height: 20px;
+  color: #ffdddd;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+button[type="submit"] {
+  background-color: #c9302c;
+  border: none;
+  padding: 14px 0;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #ac2925;
+}
+
+.conteudo {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+#atualizarSalas{
+    margin-top: 20px;
+}
