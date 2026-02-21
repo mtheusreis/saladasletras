@@ -19,15 +19,10 @@ O **Sala das Letras** é um sistema de gerenciamento de acervo bibliográfico de
 - **Linguagem:** PHP
 - **Banco de Dados:** MySQL (Relacional)
 - **Frontend:** HTML5, CSS3 e JavaScript (integração simples e direta).
-- **Servidor:** Apache.
+- **Servidor:** Hospedado e gerenciado via Hostinger.
 
 ## 🗄️ Estrutura do Banco de Dados
 O projeto utiliza uma arquitetura relacional pensada na integridade dos dados:
 - `livros`: Armazena metadados das obras.
 - `autores`: Gerencia as informações dos escritores.
 - `usuarios`: Controle de acesso ao sistema.
-
-## 🔧 Como Executar
-1. Clone o repositório:
-   ```bash
-   git clone [https://github.com/mtheusreis/saladasletras.git](https://github.com/mtheusreis/saladasletras.git)
